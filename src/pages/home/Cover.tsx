@@ -57,7 +57,7 @@ const StyledDownOutlined = styled(DownOutlined)`
         transform: translate(-50%, -50%);
         color: white;
         font-size: 40px;
-        animation: ${arrowFadeIn} 5s, ${arrowBounce} 2s infinite;
+        animation: ${arrowFadeIn} 4s, ${arrowBounce} 2s infinite;
 `;
 
 const TitleContainer = styled.div`

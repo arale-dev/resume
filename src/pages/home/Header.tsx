@@ -49,7 +49,7 @@ const Header = (): ReactElement => {
                     About Me
                 </Menu.Item>
                 <Menu.Item key="app" icon={<AppstoreAddOutlined />}>
-                    Projects
+                    My Projects
                 </Menu.Item>
                 <Menu.Item key="contact" icon={<CommentOutlined />}>
                     <a href={links.contact}>Contact Me</a>

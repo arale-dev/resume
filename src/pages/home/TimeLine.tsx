@@ -12,7 +12,7 @@ const Container = styled.div`
     }
 `;
 
-const Footer = (): ReactElement => {
+const TimeLine = (): ReactElement => {
     return (
         <Container>
             <Text>Copyright © 2021 Hanbyul Park. All rights reserved.</Text>
@@ -20,4 +20,4 @@ const Footer = (): ReactElement => {
     );
 };
 
-export default Footer;
+export default TimeLine;

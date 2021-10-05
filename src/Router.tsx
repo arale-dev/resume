@@ -6,7 +6,7 @@ const App = (): ReactElement => {
     return (
         <BrowserRouter>
             <Route exact path="/" component={Home} />
-            {/* <Route path="/about" component={About} /> */}
+            <Route path="/contact" component={Home} />
         </BrowserRouter>
     );
 };

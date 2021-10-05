@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Header from 'src/pages/home/Header';
 import Cover from 'src/pages/home/Cover';
 import Footer from './Footer';
-import TypoContent from './TypoContent';
+import Introduction from './TypoContent';
 
 // background-color: ${Theme.light};
 const Container = styled.div`
@@ -20,7 +20,7 @@ const App = (): ReactElement => {
         <Container>
             <Header />
             <Cover />
-            <TypoContent />
+            <Introduction />
             <Footer />
         </Container>
     );
