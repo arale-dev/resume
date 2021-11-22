@@ -18,7 +18,7 @@ const Container = styled.div`
         left: 0;
         right: 0;
         z-index: 1;
-        font-size: 16px;
+        font-size: 2.4rem;
     }
 `;
 const StyledMenu = styled(Menu)`

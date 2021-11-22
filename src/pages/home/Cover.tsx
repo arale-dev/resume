@@ -52,21 +52,30 @@ const arrowBounce = keyframes`
 const StyledDownOutlined = styled(DownOutlined)`
      {
         position: absolute;
-        bottom: 40px;
+        bottom: 4rem;
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
-        font-size: 40px;
+        font-size: 4rem;
         animation: ${arrowFadeIn} 4s, ${arrowBounce} 2s infinite;
+        @media (max-width: 768px) {
+            bottom: 12rem;
+            font-size: 6rem;
+        }
 `;
 
 const TitleContainer = styled.div`
     position: absolute;
     top: 50%;
-    left: 150px;
+    left: 15rem;
+    right: 15rem;
     transform: translate(0%, -50%);
     display: flex;
     flex-direction: column;
+    @media (max-width: 768px) {
+        left: 3rem;
+        right: 3rem;
+    }
 `;
 
 const titleAnimation = keyframes`
@@ -87,11 +96,15 @@ const TitleLine = styled.text<{ nth: number }>`
     display: block;
     color: white;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 6rem;
     ${(props) =>
         css`
             animation: ${titleAnimation} ${props.nth * 1.5}s;
         `}
+
+    @media (max-width: 768px) {
+        font-size: 3.6rem;
+    }
 `;
 
 type TitleProps = {
