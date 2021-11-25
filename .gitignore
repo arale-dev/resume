@@ -4,6 +4,8 @@
 .env
 .firebase/
 
+# context
+src/context/
 
 # dependencies
 /node_modules

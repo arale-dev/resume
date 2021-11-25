@@ -4,6 +4,8 @@ import styled from 'styled-components';
 // import Title from 'src/components/Title';
 import Cover from 'src/pages/Home/Cover';
 import { Divider } from 'antd';
+import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
 import Introduction from './Introduction';
 import Education from './Education';
 import Price from './Price';
@@ -28,6 +30,7 @@ const App = (): ReactElement => {
     return (
         <Container>
             <Cover />
+            <Header />
             <PaddedContainer>
                 <Introduction />
                 <Divider />
@@ -35,6 +38,7 @@ const App = (): ReactElement => {
                 <Divider />
                 <Price />
             </PaddedContainer>
+            <Footer />
         </Container>
     );
 };

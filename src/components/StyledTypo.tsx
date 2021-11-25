@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { Typography } from 'antd';
 import styled from 'styled-components';
 import React, { useState } from 'react';

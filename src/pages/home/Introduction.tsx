@@ -50,14 +50,4 @@ const Introduction = (): ReactElement => {
     );
 };
 
-// const TypoContent = (): ReactElement => {
-//     return (
-//         <Container>
-//             <Introduction />
-//             <Divider />
-//             <Education />
-//         </Container>
-//     );
-// };
-
 export default Introduction;

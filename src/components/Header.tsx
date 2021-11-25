@@ -13,18 +13,19 @@ const { SubMenu } = Menu;
 
 const Container = styled.div`
      {
-        position: absolute;
+        position: sticky;
         top: 0;
         left: 0;
         right: 0;
         z-index: 1;
-        font-size: 2.4rem;
     }
 `;
 const StyledMenu = styled(Menu)`
      {
         display: flex;
         justify-content: flex-end;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
     }
 `;
 const links = {

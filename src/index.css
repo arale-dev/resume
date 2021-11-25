@@ -24,6 +24,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.ant-menu,
+.ant-menu-item,
+.ant-menu-item-icon,
+.ant-menu-submenu-title {
+    font-size: 2.4rem !important;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
