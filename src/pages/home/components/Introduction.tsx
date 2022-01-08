@@ -42,8 +42,7 @@ const Introduction = (): ReactElement => {
                 <StyledA href="mailto:9801gksquf@gmail.com">
                     9801gksquf@gmail.com
                 </StyledA>
-                으로 이메일을 주시거나,{' '}
-                <StyledA href="/contact">Contact</StyledA> 폼을 통해 연락처를
+                으로 이메일을 주시거나, 아래의 Contact 폼을 통해 연락처를
                 남겨주세요.
             </StyledParagraph>
         </>

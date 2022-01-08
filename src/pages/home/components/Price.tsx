@@ -29,13 +29,12 @@ const Price = (): ReactElement => {
                         </Tooltip>{' '}
                         관련 개별연구에 참여하였습니다. 투명한 물체의 시인성이
                         매체에 따라 달라지는 것을 개선하기 위하여 데이터 렌더링
-                        옵션들을 매핑해주는 방안을 제안하였습니다.
-                    </li>
-                    <li>
+                        옵션들을 매핑해주는 방안을 제안하였습니다.(
                         <StyledA href="https://koasas.kaist.ac.kr/handle/10203/249181">
                             배경색 변화에 따른 볼륨 가시화 내 반투명 물체의 색
                             인지 향상에 대한 연구
                         </StyledA>
+                        )
                     </li>
                 </ul>
             </StyledParagraph>
