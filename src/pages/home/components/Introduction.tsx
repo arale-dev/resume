@@ -13,7 +13,9 @@ const Introduction = (): ReactElement => {
         <>
             <StyledTitle>Introduction</StyledTitle>
             <StyledParagraph>
-                새로움과 도전을 사랑하는 개발자, 박한별입니다.
+                <StyledText>
+                    새로움과 도전을 사랑하는 개발자, 박한별입니다.
+                </StyledText>
             </StyledParagraph>
             <StyledParagraph>
                 대학교 수업에서 몇줄의 코드 만으로 화면을 이리저리 움직이던

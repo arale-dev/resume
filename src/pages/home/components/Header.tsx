@@ -8,7 +8,7 @@ import {
     AppstoreAddOutlined,
     HomeOutlined,
 } from '@ant-design/icons';
-import contextStore from '@src/context/contextStore';
+import contextStore from '@context/contextStore';
 import { observer } from 'mobx-react-lite';
 
 const { SubMenu } = Menu;

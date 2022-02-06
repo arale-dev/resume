@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import programmer from '@assets/image/programmer.jpg';
 import { DownOutlined } from '@ant-design/icons';
-import contextStore from '@src/context/contextStore';
+import contextStore from '@context/contextStore';
 import { observer } from 'mobx-react-lite';
 
 const Container = styled.div`

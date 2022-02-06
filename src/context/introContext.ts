@@ -1,9 +1,5 @@
 /* eslint-disable max-len */
-import {
-    RobotOutlined,
-    SearchOutlined,
-    SmileOutlined,
-} from '@ant-design/icons';
+
 import Context from './contextInterface';
 
 export const IntroEnglish: Context = {
@@ -13,7 +9,7 @@ export const IntroEnglish: Context = {
             {
                 type: 'typo',
                 content:
-                    "Hello. I'm Park Hanbyul, a developer who loves novelty and challenge.",
+                    "I'm Park Hanbyul, a developer who loves novelty and challenge.",
             },
         ],
         [
@@ -23,8 +19,8 @@ export const IntroEnglish: Context = {
                     'I fell under the spell of programming by moving the Hubo character ',
             },
             {
-                type: 'icon',
-                content: RobotOutlined,
+                type: 'tooltip-icon',
+                content: 'robot',
             },
             {
                 type: 'typo',
@@ -45,7 +41,7 @@ export const IntroEnglish: Context = {
             },
             {
                 type: 'icon',
-                content: SearchOutlined,
+                content: 'search',
             },
             {
                 type: 'typo',
@@ -71,7 +67,7 @@ export const IntroEnglish: Context = {
             },
             {
                 type: 'icon',
-                content: SmileOutlined,
+                content: 'smile',
             },
         ],
     ],
@@ -93,8 +89,9 @@ export const IntroKorean: Context = {
                     '대학교 과제에서 몇줄의 코드로 화면을 뛰노는 휴보 캐릭터',
             },
             {
-                type: 'icon',
-                content: RobotOutlined,
+                type: 'tooltip-icon',
+                content: 'robot',
+                tooltip: '클릭해보세요!',
             },
             {
                 type: 'typo',
@@ -118,7 +115,7 @@ export const IntroKorean: Context = {
             },
             {
                 type: 'icon',
-                content: SearchOutlined,
+                content: 'search',
             },
             {
                 type: 'typo',
@@ -144,7 +141,7 @@ export const IntroKorean: Context = {
             },
             {
                 type: 'icon',
-                content: SmileOutlined,
+                content: 'smile',
             },
         ],
     ],

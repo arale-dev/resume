@@ -4,10 +4,13 @@ import Cover from '@pages/Home/components/Cover';
 import { Divider } from 'antd';
 import Header from '@pages/Home/components/Header';
 import Footer from '@pages/Home/components/Footer';
-import Introduction from './components/Introduction';
+import { observer } from 'mobx-react-lite';
+import ContextConverter from '@components/Converter';
+import contextStore from '@context/contextStore';
+// import Introduction from './components/Introduction';
 import Education from './components/Education';
 import Price from './components/Price';
-import Work from './components/Work';
+// import Work from './components/Work';
 
 // background-color: ${Theme.light};
 const Container = styled.div`
@@ -57,12 +60,13 @@ const App = (): ReactElement => {
                 }}
             />
             <PaddedContainer>
-                <Introduction />
+                {/* <Introduction /> */}
+                <ContextConverter context={contextStore.intro} />
                 <Divider />
                 <Education />
                 <Divider />
-                <Work />
-                <Divider />
+                {/* <Work /> */}
+                {/* <Divider /> */}
                 <Price />
             </PaddedContainer>
             <div
@@ -90,4 +94,4 @@ const App = (): ReactElement => {
     );
 };
 
-export default App;
+export default observer(App);
