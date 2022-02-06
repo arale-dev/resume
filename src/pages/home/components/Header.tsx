@@ -8,6 +8,8 @@ import {
     AppstoreAddOutlined,
     HomeOutlined,
 } from '@ant-design/icons';
+import contextStore from '@src/context/contextStore';
+import { observer } from 'mobx-react-lite';
 
 const { SubMenu } = Menu;
 
@@ -89,12 +91,22 @@ const Header = ({
                     title="Language"
                     style={{ float: 'right' }}
                 >
-                    <Menu.Item key="lang:english">English</Menu.Item>
-                    <Menu.Item key="lang:korean">Korean</Menu.Item>
+                    <Menu.Item
+                        key="lang:english"
+                        onClick={() => contextStore.changeLanguage('en')}
+                    >
+                        English
+                    </Menu.Item>
+                    <Menu.Item
+                        key="lang:korean"
+                        onClick={() => contextStore.changeLanguage('ko')}
+                    >
+                        Korean
+                    </Menu.Item>
                 </SubMenu>
             </StyledMenu>
         </Container>
     );
 };
 
-export default Header;
+export default observer(Header);

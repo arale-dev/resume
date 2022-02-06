@@ -9,7 +9,9 @@ interface BaseContent {
     link?: Link;
 }
 type Paragraph = BaseContent[];
+
 export default interface Context {
     title: string;
     content: Paragraph[];
 }
+export type CoverContext = string[];

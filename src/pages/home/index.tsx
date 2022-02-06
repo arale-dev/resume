@@ -1,7 +1,5 @@
 import React, { ReactElement, useRef } from 'react';
 import styled from 'styled-components';
-// import Theme from '@assets/Theme';
-// import Title from '@components/Title';
 import Cover from '@pages/Home/components/Cover';
 import { Divider } from 'antd';
 import Header from '@pages/Home/components/Header';

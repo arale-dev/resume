@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import programmer from '@assets/image/programmer.jpg';
 import { DownOutlined } from '@ant-design/icons';
+import contextStore from '@src/context/contextStore';
+import { observer } from 'mobx-react-lite';
 
 const Container = styled.div`
      {
@@ -57,7 +59,7 @@ const StyledDownOutlined = styled(DownOutlined)`
         transform: translate(-50%, -50%);
         color: white;
         font-size: 4rem;
-        animation: ${arrowFadeIn} 4s, ${arrowBounce} 2s infinite;
+        animation: ${arrowFadeIn} 3s, ${arrowBounce} 2s infinite;
         @media (max-width: 768px) {
             bottom: 12rem;
             font-size: 6rem;
@@ -107,35 +109,24 @@ const TitleLine = styled.text<{ nth: number }>`
     }
 `;
 
-type TitleProps = {
-    title1: string;
-    title2: string;
-    title3: string;
-};
-
-const Title: React.FC<TitleProps> = ({ title1, title2, title3 }) => {
-    return (
-        <TitleContainer>
-            <TitleLine nth={1}>{title1}</TitleLine>
-            <TitleLine nth={2}>{title2}</TitleLine>
-            <TitleLine nth={3}>{title3}</TitleLine>
-        </TitleContainer>
-    );
-};
-
 const Cover = (): ReactElement => {
     return (
         <Container>
             <StyledImage src={programmer} />
             <Darker />
-            <Title
-                title1="안녕하세요,"
-                title2="사용자의 입장에서 서비스를 생각하는"
-                title3="주니어 프론트엔드 개발자 박한별입니다."
-            />
+            <TitleContainer>
+                {contextStore.cover.map((v, i) => (
+                    <TitleLine
+                        key={contextStore.lang + i.toString()}
+                        nth={i + 1}
+                    >
+                        {v}
+                    </TitleLine>
+                ))}
+            </TitleContainer>
             <StyledDownOutlined />
         </Container>
     );
 };
 
-export default Cover;
+export default observer(Cover);
