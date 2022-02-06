@@ -1,11 +1,11 @@
 import React, { ReactElement, useRef } from 'react';
 import styled from 'styled-components';
-// import Theme from 'src/assets/Theme';
-// import Title from 'src/components/Title';
-import Cover from 'src/pages/Home/components/Cover';
+// import Theme from '@assets/Theme';
+// import Title from '@components/Title';
+import Cover from '@pages/Home/components/Cover';
 import { Divider } from 'antd';
-import Header from 'src/pages/Home/components/Header';
-import Footer from 'src/pages/Home/components/Footer';
+import Header from '@pages/Home/components/Header';
+import Footer from '@pages/Home/components/Footer';
 import Introduction from './components/Introduction';
 import Education from './components/Education';
 import Price from './components/Price';
