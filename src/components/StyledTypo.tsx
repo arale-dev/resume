@@ -5,7 +5,13 @@ import React, { useState } from 'react';
 
 const { Title, Paragraph, Text } = Typography;
 
-export const StyledText = Text;
+export const StyledText = styled(Text)<{ color?: string }>`
+     {
+        font-size: 2.4rem !important;
+        ${(props) =>
+            props.color ? `color: ${props.color} !important;` : undefined}
+    }
+`;
 
 export const StyledA = styled.a`
      {
@@ -13,9 +19,11 @@ export const StyledA = styled.a`
         font-style: italic;
     }
 `;
-export const StyledTitle = styled(Title)`
+export const StyledTitle = styled(Title)<{ color?: string }>`
      {
         font-size: 4.6rem !important;
+        ${(props) =>
+            props.color ? `color: ${props.color} !important;` : undefined}
     }
 `;
 export const StyledParagraph = styled(Paragraph)`

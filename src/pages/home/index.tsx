@@ -10,6 +10,7 @@ import contextStore from '@context/contextStore';
 // import Introduction from './components/Introduction';
 import Education from './components/Education';
 import Price from './components/Price';
+import Contact from './components/Contact';
 // import Work from './components/Work';
 
 // background-color: ${Theme.light};
@@ -20,7 +21,7 @@ const Container = styled.div`
         flex: 1;
     }
 `;
-const PaddedContainer = styled.div`
+export const PaddedContainer = styled.div`
      {
         margin: auto;
         max-width: 1020px;
@@ -34,8 +35,8 @@ const App = (): ReactElement => {
         scrollRef.current[0]?.scrollIntoView({ behavior: 'smooth' });
     const goToIntro = (): void =>
         scrollRef.current[1]?.scrollIntoView({ behavior: 'smooth' });
-    const goToProj = (): void =>
-        scrollRef.current[2]?.scrollIntoView({ behavior: 'smooth' });
+    // const goToProj = (): void =>
+    //     scrollRef.current[2]?.scrollIntoView({ behavior: 'smooth' });
     const goToContact = (): void =>
         scrollRef.current[3]?.scrollIntoView({ behavior: 'smooth' });
 
@@ -50,7 +51,7 @@ const App = (): ReactElement => {
             <Header
                 goToHome={goToHome}
                 goToIntro={goToIntro}
-                goToProj={goToProj}
+                // goToProj={goToProj}
                 goToContact={goToContact}
             />
 
@@ -69,7 +70,7 @@ const App = (): ReactElement => {
                 {/* <Divider /> */}
                 <Price />
             </PaddedContainer>
-            <div
+            {/* <div
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[2] = el;
                 }}
@@ -78,17 +79,18 @@ const App = (): ReactElement => {
                     height: 2000,
                     alignSelf: 'stretch',
                 }}
-            />
+            /> */}
             <div
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[3] = el;
                 }}
                 style={{
-                    backgroundColor: 'green',
-                    height: 2000,
+                    backgroundColor: '#393E46',
                     alignSelf: 'stretch',
                 }}
-            />
+            >
+                <Contact />
+            </div>
             <Footer />
         </Container>
     );

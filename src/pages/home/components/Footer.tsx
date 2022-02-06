@@ -1,21 +1,22 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import { Typography } from 'antd';
+import { StyledText } from '@src/components/StyledTypo';
 
-const { Text } = Typography;
 const Container = styled.div`
      {
         align-self: stretch;
         padding: 40px;
         text-align: center;
-        background-color: #aaa;
+        background-color: #222831;
     }
 `;
 
 const Footer = (): ReactElement => {
     return (
         <Container>
-            <Text>Copyright © 2021 Hanbyul Park. All rights reserved.</Text>
+            <StyledText color="#eeeeee">
+                Copyright © 2022 Hanbyul Park. All rights reserved.
+            </StyledText>
         </Container>
     );
 };

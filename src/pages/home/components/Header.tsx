@@ -5,7 +5,7 @@ import {
     CommentOutlined,
     IdcardOutlined,
     SettingOutlined,
-    AppstoreAddOutlined,
+    // AppstoreAddOutlined,
     HomeOutlined,
 } from '@ant-design/icons';
 import contextStore from '@context/contextStore';
@@ -40,14 +40,14 @@ const StyledMenu = styled(Menu)`
 interface HeaderProps {
     goToHome: () => void;
     goToIntro: () => void;
-    goToProj: () => void;
+    // goToProj: () => void;
     goToContact: () => void;
 }
 
 const Header = ({
     goToHome,
     goToIntro,
-    goToProj,
+    // goToProj,
     goToContact,
 }: HeaderProps): ReactElement => {
     // TODO: 아이콘, 메뉴 이름 및 키, 클릭함수 데이터 이동
@@ -69,13 +69,13 @@ const Header = ({
                 >
                     About Me
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                     key="2"
                     icon={<AppstoreAddOutlined />}
                     onClick={goToProj}
                 >
                     My Projects
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item
                     key="3"
                     icon={<CommentOutlined />}

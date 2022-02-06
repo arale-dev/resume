@@ -40,3 +40,33 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 }
+
+.ant-input-affix-wrapper {
+    background-color: #222831 !important;
+    border: none !important;
+    margin-bottom: 1rem;
+    padding: 1rem !important;
+}
+.ant-input-affix-wrapper > .ant-input {
+    background-color: #222831 !important;
+    font-size: 2.4rem;
+    color: #eeeeee !important;
+    border: none !important;
+}
+.anticon-close-circle > svg {
+    width: 2rem;
+    height: 2rem;
+    color: #eeeeee !important;
+}
+
+.ant-message {
+    font-size: 2rem !important;
+    padding: 2rem !important;
+    line-height: normal !important;
+}
+.ant-message .anticon {
+    font-size: 2rem !important;
+}
+.ant-message-notice-content {
+    padding: 2rem !important;
+}
