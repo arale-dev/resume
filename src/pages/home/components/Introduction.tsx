@@ -6,7 +6,7 @@ import {
     StyledParagraph,
     StyledText,
     StyledIcon,
-} from 'src/components/StyledTypo';
+} from '@components/StyledTypo';
 
 const Introduction = (): ReactElement => {
     return (

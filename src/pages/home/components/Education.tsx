@@ -4,7 +4,7 @@ import {
     StyledTitle,
     StyledParagraph,
     StyledText,
-} from 'src/components/StyledTypo';
+} from '@components/StyledTypo';
 
 const Education = (): ReactElement => {
     return (

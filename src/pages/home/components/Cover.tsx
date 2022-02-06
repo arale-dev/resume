@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import programmer from 'src/assets/image/programmer.jpg';
+import programmer from '@assets/image/programmer.jpg';
 import { DownOutlined } from '@ant-design/icons';
 
 const Container = styled.div`

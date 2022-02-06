@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 // import Contact from './pages/Contact';
 // import Projects from './pages/Projects';
@@ -9,13 +9,7 @@ import Home from './pages/Home';
 const App = (): ReactElement => {
     return (
         <BrowserRouter>
-            <Routes>
-                {/* <Header /> */}
-                <Route path="/" element={<Home />} />
-                {/* <Route path="/contact" element={<Contact />} />
-            <Route path="/projects" element={<Projects />} />
-            <Footer /> */}
-            </Routes>
+            <Route path="/" component={Home} />
         </BrowserRouter>
     );
 };

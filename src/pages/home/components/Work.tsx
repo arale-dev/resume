@@ -3,7 +3,7 @@ import {
     StyledTitle,
     StyledParagraph,
     StyledText,
-} from 'src/components/StyledTypo';
+} from '@components/StyledTypo';
 
 const Work = (): ReactElement => {
     return (
