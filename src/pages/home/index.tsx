@@ -7,13 +7,8 @@ import Footer from '@pages/Home/components/Footer';
 import { observer } from 'mobx-react-lite';
 import ContextConverter from '@components/Converter';
 import contextStore from '@context/contextStore';
-// import Introduction from './components/Introduction';
-import Education from './components/Education';
-import Price from './components/Price';
 import Contact from './components/Contact';
-// import Work from './components/Work';
 
-// background-color: ${Theme.light};
 const Container = styled.div`
      {
         display: flex;
@@ -35,10 +30,12 @@ const App = (): ReactElement => {
         scrollRef.current[0]?.scrollIntoView({ behavior: 'smooth' });
     const goToIntro = (): void =>
         scrollRef.current[1]?.scrollIntoView({ behavior: 'smooth' });
+    const goToBlog = (): void =>
+        scrollRef.current[2]?.scrollIntoView({ behavior: 'smooth' });
     // const goToProj = (): void =>
-    //     scrollRef.current[2]?.scrollIntoView({ behavior: 'smooth' });
+    //     scrollRef.current[3]?.scrollIntoView({ behavior: 'smooth' });
     const goToContact = (): void =>
-        scrollRef.current[3]?.scrollIntoView({ behavior: 'smooth' });
+        scrollRef.current[4]?.scrollIntoView({ behavior: 'smooth' });
 
     return (
         <Container>
@@ -51,6 +48,7 @@ const App = (): ReactElement => {
             <Header
                 goToHome={goToHome}
                 goToIntro={goToIntro}
+                goToBlog={goToBlog}
                 // goToProj={goToProj}
                 goToContact={goToContact}
             />
@@ -61,14 +59,11 @@ const App = (): ReactElement => {
                 }}
             />
             <PaddedContainer>
-                {/* <Introduction /> */}
                 <ContextConverter context={contextStore.intro} />
                 <Divider />
-                <Education />
+                <ContextConverter context={contextStore.education} />
                 <Divider />
-                {/* <Work /> */}
-                {/* <Divider /> */}
-                <Price />
+                <ContextConverter context={contextStore.awards} />
             </PaddedContainer>
             {/* <div
                 ref={(el: HTMLDivElement) => {
@@ -80,9 +75,19 @@ const App = (): ReactElement => {
                     alignSelf: 'stretch',
                 }}
             /> */}
-            <div
+            {/* <div
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[3] = el;
+                }}
+                style={{
+                    backgroundColor: 'red',
+                    height: 2000,
+                    alignSelf: 'stretch',
+                }}
+            /> */}
+            <div
+                ref={(el: HTMLDivElement) => {
+                    scrollRef.current[4] = el;
                 }}
                 style={{
                     backgroundColor: '#393E46',

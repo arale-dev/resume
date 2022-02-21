@@ -32,11 +32,12 @@ export const StyledParagraph = styled(Paragraph)`
     }
 `;
 
+const generateRandomColor = () => {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+};
+
 export const StyledIcon: React.FC = ({ children }) => {
-    const [twoToneColor, setTwoToneColor] = useState('#725e51');
-    const generateRandomColor = () => {
-        return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-    };
+    const [twoToneColor, setTwoToneColor] = useState(generateRandomColor());
     const handleChangeColor = () => {
         setTwoToneColor(generateRandomColor());
     };
@@ -53,7 +54,6 @@ export const StyledIcon: React.FC = ({ children }) => {
 
     return (
         <button
-            // onMouseEnter={handleChangeColor}
             type="button"
             onClick={handleChangeColor}
             style={{

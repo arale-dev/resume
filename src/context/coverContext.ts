@@ -2,7 +2,7 @@ import { CoverContext } from './contextInterface';
 
 export const CoverEnglish: CoverContext = [
     "Hello. I'm Park Hanbyul.",
-    "I'm a frontend developer.",
+    "I'm a Web Frontend Developer.",
 ];
 
 export const CoverKorean: CoverContext = [

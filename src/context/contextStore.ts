@@ -5,6 +5,8 @@ import { message } from 'antd';
 import Context, { CoverContext } from './contextInterface';
 import { CoverEnglish, CoverKorean } from './coverContext';
 import { IntroEnglish, IntroKorean } from './introContext';
+import { AwardsEnglish, AwardsKorean } from './awardsContext';
+import { EducationEnglish, EducationKorean } from './educationContext';
 
 class ContextStore {
     lang: string;
@@ -27,8 +29,8 @@ class ContextStore {
         this.lang = 'ko';
         this.cover = CoverKorean;
         this.intro = IntroKorean;
-        this.education = IntroKorean;
-        this.awards = IntroKorean;
+        this.education = EducationKorean;
+        this.awards = AwardsKorean;
         this.name = '';
         this.email = '';
         this.message = '';
@@ -40,14 +42,14 @@ class ContextStore {
             this.lang = 'ko';
             this.cover = CoverKorean;
             this.intro = IntroKorean;
-            this.education = IntroKorean;
-            this.awards = IntroKorean;
+            this.education = EducationKorean;
+            this.awards = AwardsKorean;
         } else if (lang === 'en') {
             this.lang = 'en';
             this.cover = CoverEnglish;
             this.intro = IntroEnglish;
-            this.education = IntroEnglish;
-            this.awards = IntroEnglish;
+            this.education = EducationEnglish;
+            this.awards = AwardsEnglish;
         }
     }
 

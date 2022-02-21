@@ -16,7 +16,7 @@ export const IntroEnglish: Context = {
             {
                 type: 'typo',
                 content:
-                    'I fell under the spell of programming by moving the Hubo character ',
+                    'I fell under the spell of programming by moving the robot character ',
             },
             {
                 type: 'tooltip-icon',
@@ -30,7 +30,7 @@ export const IntroEnglish: Context = {
             {
                 type: 'mark',
                 content:
-                    'ReactJS, Javascript, TypeScript, ThreeJS, and ReactNative.',
+                    'ReactJS, JavaScript, TypeScript, ThreeJS, and ReactNative.',
             },
         ],
         [
@@ -86,7 +86,7 @@ export const IntroKorean: Context = {
             {
                 type: 'typo',
                 content:
-                    '대학교 과제에서 몇줄의 코드로 화면을 뛰노는 휴보 캐릭터',
+                    '대학교 과제에서 몇줄의 코드만로 화면 이리저리 움직이는 휴보 캐릭터',
             },
             {
                 type: 'tooltip-icon',

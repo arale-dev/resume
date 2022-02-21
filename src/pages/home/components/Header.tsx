@@ -7,6 +7,7 @@ import {
     SettingOutlined,
     // AppstoreAddOutlined,
     HomeOutlined,
+    BookOutlined,
 } from '@ant-design/icons';
 import contextStore from '@context/contextStore';
 import { observer } from 'mobx-react-lite';
@@ -40,6 +41,7 @@ const StyledMenu = styled(Menu)`
 interface HeaderProps {
     goToHome: () => void;
     goToIntro: () => void;
+    goToBlog: () => void;
     // goToProj: () => void;
     goToContact: () => void;
 }
@@ -47,6 +49,7 @@ interface HeaderProps {
 const Header = ({
     goToHome,
     goToIntro,
+    goToBlog,
     // goToProj,
     goToContact,
 }: HeaderProps): ReactElement => {
@@ -69,15 +72,18 @@ const Header = ({
                 >
                     About Me
                 </Menu.Item>
+                <Menu.Item key="2" icon={<BookOutlined />} onClick={goToBlog}>
+                    Blog
+                </Menu.Item>
                 {/* <Menu.Item
-                    key="2"
+                    key="3"
                     icon={<AppstoreAddOutlined />}
-                    onClick={goToProj}
+                    // onClick={goToProj}
                 >
                     My Projects
                 </Menu.Item> */}
                 <Menu.Item
-                    key="3"
+                    key="4"
                     icon={<CommentOutlined />}
                     onClick={goToContact}
                 >

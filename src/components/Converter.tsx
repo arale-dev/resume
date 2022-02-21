@@ -1,6 +1,12 @@
 import React, { ReactElement } from 'react';
 
-import Context, { Content, Link, Paragraph } from '@context/contextInterface';
+import Context, {
+    BaseContent,
+    Content,
+    Link,
+    Paragraph,
+    ParagraphContent,
+} from '@context/contextInterface';
 import { Tooltip } from 'antd';
 import {
     RobotOutlined,
@@ -20,6 +26,16 @@ const typoConverter = (content: Content): ReactElement => {
 };
 const markConverter = (content: Content): ReactElement => {
     return <StyledText mark>{content}</StyledText>;
+};
+const tooltipTypoConverter = (
+    content: Content,
+    tooltip?: string
+): ReactElement => {
+    return (
+        <Tooltip title={tooltip || 'Click me!'}>
+            {typoConverter(content)}
+        </Tooltip>
+    );
 };
 const iconConverter = (content: Content): ReactElement | undefined => {
     const Icon = (iconContent: Content): ReactElement | undefined => {
@@ -51,6 +67,29 @@ const hrefConverter = (content: Content, link?: Link): ReactElement => {
     return <StyledA href={link}>{content}</StyledA>;
 };
 
+const match = (content: ParagraphContent): ReactElement | undefined => {
+    switch (content.type) {
+        case 'typo':
+            return typoConverter(content.content);
+        case 'mark':
+            return markConverter(content.content);
+        case 'tooltip-typo':
+            return tooltipTypoConverter(content.content, content.tooltip);
+        case 'tooltip-icon':
+            return tooltipIconConverter(content.content, content.tooltip);
+        case 'icon':
+            return iconConverter(content.content);
+        case 'href':
+            return hrefConverter(content.content, content.link);
+        default:
+            return undefined;
+    }
+};
+
+const listConverter = (contents: BaseContent[]): ReactElement => {
+    return <li>{contents.map(match)}</li>;
+};
+
 const ContextConverter = (props: { context: Context }): ReactElement => {
     const { context } = props;
     return (
@@ -60,26 +99,9 @@ const ContextConverter = (props: { context: Context }): ReactElement => {
                 return (
                     <StyledParagraph>
                         {paragraph.map((content) => {
-                            switch (content.type) {
-                                case 'typo':
-                                    return typoConverter(content.content);
-                                case 'mark':
-                                    return markConverter(content.content);
-                                case 'tooltip-icon':
-                                    return tooltipIconConverter(
-                                        content.content,
-                                        content.tooltip
-                                    );
-                                case 'icon':
-                                    return iconConverter(content.content);
-                                case 'href':
-                                    return hrefConverter(
-                                        content.content,
-                                        content.link
-                                    );
-                                default:
-                                    return undefined;
-                            }
+                            if (content.type === 'list')
+                                return listConverter(content.contents);
+                            return match(content);
                         })}
                     </StyledParagraph>
                 );
