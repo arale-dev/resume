@@ -8,6 +8,7 @@ import { observer } from 'mobx-react-lite';
 import ContextConverter from '@components/Converter';
 import contextStore from '@context/contextStore';
 import Contact from './components/Contact';
+import Blog from './components/Blog';
 
 const Container = styled.div`
      {
@@ -65,16 +66,17 @@ const App = (): ReactElement => {
                 <Divider />
                 <ContextConverter context={contextStore.awards} />
             </PaddedContainer>
-            {/* <div
+            <div
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[2] = el;
                 }}
                 style={{
-                    backgroundColor: 'red',
-                    height: 2000,
+                    backgroundColor: '#393E46',
                     alignSelf: 'stretch',
                 }}
-            /> */}
+            >
+                <Blog />
+            </div>
             {/* <div
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[3] = el;

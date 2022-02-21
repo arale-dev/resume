@@ -15,12 +15,12 @@ html {
         font-size: 8px !important;
     }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1055px) {
     html {
         font-size: 7px !important;
     }
 }
-@media (max-width: 920px) {
+@media (max-width: 927px) {
     html {
         font-size: 6.2px !important;
     }

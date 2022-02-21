@@ -75,7 +75,7 @@ const TitleContainer = styled.div`
     display: flex;
     flex-direction: column;
     @media (max-width: 768px) {
-        left: 3rem;
+        left: 6rem;
         right: 3rem;
     }
 `;
@@ -103,9 +103,8 @@ const TitleLine = styled.text<{ nth: number }>`
         css`
             animation: ${titleAnimation} ${props.nth * 1.5}s;
         `}
-
-    @media (max-width: 768px) {
-        font-size: 3.6rem;
+    @media (max-width: 799px) {
+        font-size: 4rem;
     }
 `;
 
