@@ -106,6 +106,9 @@ const TitleLine = styled.text<{ nth: number }>`
     @media (max-width: 799px) {
         font-size: 4rem;
     }
+    @media (max-width: 450px) {
+        font-size: 3.4rem;
+    }
 `;
 
 const Cover = (): ReactElement => {
