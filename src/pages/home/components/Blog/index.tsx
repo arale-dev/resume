@@ -97,6 +97,7 @@ const Blog = (): React.ReactElement => {
                                     imgurl={doc.data().thumbnail}
                                     date={doc.data().released_at}
                                     desc={doc.data().short_description}
+                                    url={doc.data().url_slug}
                                 />
                             );
                         })}

@@ -44,7 +44,7 @@ const StyledBlogTitle = styled(Typography.Text)<{
         overflow: hidden;
     }
 `;
-const CardContainer = styled.div`
+const CardContainer = styled.a`
     padding: 8px;
     display: flex;
     flex-direction: column;
@@ -84,19 +84,21 @@ const BlogImg = ({ imgurl }: { imgurl: string }): React.ReactElement => {
         </CoverImg>
     );
 };
-
+const baseUrl = 'https://velog.io/@dalbodre_ari/';
 const BlogCard = (props: {
     title: string;
     imgurl: string;
     date: string;
     desc: string;
+    url: string;
 }): React.ReactElement => {
-    const { title, imgurl, date, desc } = props;
+    const { title, imgurl, date, desc, url } = props;
     const [hovered, setHovered] = useState(false);
     return (
         <CardContainer
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            href={baseUrl + url}
         >
             <BlogImg imgurl={imgurl} />
             <Space />
