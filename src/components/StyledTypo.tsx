@@ -5,11 +5,17 @@ import React, { useState } from 'react';
 
 const { Title, Paragraph, Text } = Typography;
 
-export const StyledText = styled(Text)<{ color?: string }>`
+export const StyledText = styled(Text)<{ color?: string; size?: string }>`
      {
-        font-size: 2.4rem !important;
+        font-size: ${(props) => {
+                if (props.size === 'big') return `3rem !important;`;
+                if (props.size === 'small') return `2rem !important;`;
+                return `2.4rem !important;`;
+            }}
+            ${(props) =>
+                props.color ? `color: ${props.color} !important;` : undefined};
         ${(props) =>
-            props.color ? `color: ${props.color} !important;` : undefined}
+            props.size === 'big' ? `font-weight: 700 !important;` : ''}
     }
 `;
 
@@ -21,7 +27,8 @@ export const StyledA = styled.a`
 `;
 export const StyledTitle = styled(Title)<{ color?: string }>`
      {
-        font-size: 4.6rem !important;
+        font-size: 5rem !important;
+        font-weight: 700 !important;
         ${(props) =>
             props.color ? `color: ${props.color} !important;` : undefined}
     }

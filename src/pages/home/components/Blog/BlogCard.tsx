@@ -1,26 +1,105 @@
 /* eslint-disable max-len */
-import React from 'react';
-import contextStore from '@context/contextStore';
+import React, { useState } from 'react';
 import {
-    StyledParagraph,
+    // StyledParagraph,
     StyledText,
-    StyledTitle,
+    // StyledTitle,
 } from '@src/components/StyledTypo';
-import { PaddedContainer } from '../..';
+import styled, { keyframes } from 'styled-components';
 import 'react-multi-carousel/lib/styles.css';
 
-const BlogCard = (): React.ReactElement => {
+const hoverAnimation = keyframes`
+    0% {
+        background-color:'#393E46';
+        transform: translateY(0);
+    }
+    100% {
+        background-color:'#26292e';
+        transform: translateY(-5px);
+    }
+`;
+
+const Space = styled.div`
+    height: 12px;
+`;
+const ColoredBar = styled.div`
+    height: 0.6rem;
+    width: 40%;
+    background-color: #ffe58f;
+`;
+
+const CardContainer = styled.div`
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    &:hover {
+        animation: ${hoverAnimation} 0.5s ease-in 0s 1 forwards;
+    }
+`;
+
+const CoverImg = styled.div<{
+    url: string;
+}>`
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 80%;
+    background-origin: padding-box;
+    background: url('${(props) => props.url}') no-repeat center / cover;
+`;
+
+const BluredContainImg = styled.div<{
+    url: string;
+}>`
+    position: absolute;
+    backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('${(props) => props.url}') no-repeat center / contain;
+`;
+
+const BlogImg = ({ imgurl }: { imgurl: string }): React.ReactElement => {
     return (
-        <PaddedContainer>
-            <StyledTitle color="white">Blog</StyledTitle>
-            <StyledParagraph>
-                <StyledText color="white">
-                    {contextStore.lang === 'en'
-                        ? "Have a question or want to work together? Whatever the content is, it's good! Please leave a message. A fun suggestion is welcome :-)"
-                        : '질문이나 협업 등 함께 나누고 싶은 얘기가 있으시다면 메시지를 남겨주세요. 어떤 내용이든 좋습니다! 재미있는 제안 환영해요 :)'}
-                </StyledText>
-            </StyledParagraph>
-        </PaddedContainer>
+        <CoverImg url={imgurl}>
+            <BluredContainImg url={imgurl} />
+        </CoverImg>
+    );
+};
+
+const BlogCard = (props: {
+    title: string;
+    imgurl: string;
+    date: string;
+    desc: string;
+}): React.ReactElement => {
+    const { title, imgurl, date, desc } = props;
+    const [titleColor, setTitleColor] = useState('white');
+    return (
+        <CardContainer
+            onMouseEnter={() => setTitleColor('#ffe58f')}
+            onMouseLeave={() => setTitleColor('white')}
+        >
+            <BlogImg imgurl={imgurl} />
+            <Space />
+            <StyledText color={titleColor} size="big">
+                {title}
+            </StyledText>
+            <Space />
+            <StyledText color="lightGray">
+                {new Date(date).toLocaleString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                })}
+            </StyledText>
+            <Space />
+            <ColoredBar />
+            <Space />
+            <StyledText color="white">{desc}</StyledText>
+        </CardContainer>
     );
 };
 

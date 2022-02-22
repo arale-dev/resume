@@ -1,5 +1,11 @@
 import { makeAutoObservable } from 'mobx';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import {
+    // collection,
+    // addDoc,
+    serverTimestamp,
+    setDoc,
+    doc,
+} from 'firebase/firestore';
 import db from '@src/firebase';
 import { message } from 'antd';
 import Context, { CoverContext } from './contextInterface';
@@ -74,12 +80,19 @@ class ContextStore {
     sendDoc = (): void => {
         if (!(this.name && this.email && this.message)) this.sendFailure();
         else {
-            addDoc(collection(db, 'resume'), {
-                name: this.name,
-                email: this.email,
-                message: this.message,
-                time: serverTimestamp(),
-            }).then(this.sendSuccess, this.sendFailure);
+            setDoc(
+                doc(
+                    db,
+                    'contacts',
+                    new Date().getTime().toString() + this.name
+                ),
+                {
+                    name: this.name,
+                    email: this.email,
+                    message: this.message,
+                    time: serverTimestamp(),
+                }
+            ).then(this.sendSuccess, this.sendFailure);
         }
     };
 
@@ -99,7 +112,7 @@ class ContextStore {
     sendFailure = (): void => {
         if (this.lang === 'ko')
             message.warning(
-                '메시지를 저장하지 못했습니다. contact 폼을 모두 채웠는지 확인해주세요.'
+                '메시지를 저장하지 못했습니다. contact 폼을 채운 이후 다시 시도해주세요.'
             );
         if (this.lang === 'en')
             message.warning(
