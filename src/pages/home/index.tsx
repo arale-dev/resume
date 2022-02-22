@@ -7,6 +7,7 @@ import Footer from '@pages/Home/components/Footer';
 import { observer } from 'mobx-react-lite';
 import ContextConverter from '@components/Converter';
 import contextStore from '@context/contextStore';
+import { StyledTitle } from '@src/components/StyledTypo';
 import Contact from './components/Contact';
 import Blog from './components/Blog';
 
@@ -20,7 +21,7 @@ const Container = styled.div`
 export const PaddedContainer = styled.div`
      {
         margin: auto;
-        max-width: 1020px;
+        max-width: 980px;
         padding: 96px 32px;
     }
 `;
@@ -60,6 +61,7 @@ const App = (): ReactElement => {
                 }}
             />
             <PaddedContainer>
+                <StyledTitle>About Me</StyledTitle>
                 <ContextConverter context={contextStore.intro} />
                 <Divider />
                 <ContextConverter context={contextStore.education} />

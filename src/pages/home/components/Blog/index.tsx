@@ -20,15 +20,15 @@ const responsive = {
         items: 4,
     },
     desktop: {
-        breakpoint: { max: 1750, min: 1330 },
+        breakpoint: { max: 1750, min: 1000 },
         items: 3,
     },
     tablet: {
-        breakpoint: { max: 1325, min: 910 },
+        breakpoint: { max: 1000, min: 600 },
         items: 2,
     },
     mobile: {
-        breakpoint: { max: 910, min: 0 },
+        breakpoint: { max: 600, min: 0 },
         items: 1,
         centerMode: false,
     },
@@ -37,7 +37,7 @@ const responsive = {
 const BlogCardContainer = styled.div`
      {
         margin: auto;
-        max-width: 1800px;
+        max-width: 1400px;
         padding: 20px 32px 96px;
     }
 `;

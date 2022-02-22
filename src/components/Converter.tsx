@@ -18,7 +18,7 @@ import {
     StyledIcon,
     StyledParagraph,
     StyledText,
-    StyledTitle,
+    StyledTitleWithoutAnimation,
 } from './StyledTypo';
 
 const typoConverter = (content: Content): ReactElement => {
@@ -94,7 +94,11 @@ const ContextConverter = (props: { context: Context }): ReactElement => {
     const { context } = props;
     return (
         <>
-            <StyledTitle>{context.title}</StyledTitle>
+            {context.title && (
+                <StyledTitleWithoutAnimation>
+                    {context.title}
+                </StyledTitleWithoutAnimation>
+            )}
             {context.content.map((paragraph: Paragraph) => {
                 return (
                     <StyledParagraph>

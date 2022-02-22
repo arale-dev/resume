@@ -22,7 +22,7 @@ export type ParagraphContent = BaseContent | ListContent;
 export type Paragraph = ParagraphContent[];
 
 export default interface Context {
-    title: string;
+    title?: string;
     content: Paragraph[];
 }
 export type CoverContext = string[];

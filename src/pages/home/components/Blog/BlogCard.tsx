@@ -1,10 +1,7 @@
-/* eslint-disable max-len */
 import React, { useState } from 'react';
-import {
-    // StyledParagraph,
-    StyledText,
-    // StyledTitle,
-} from '@src/components/StyledTypo';
+import { StyledText } from '@src/components/StyledTypo';
+import { Typography } from 'antd';
+
 import styled, { keyframes } from 'styled-components';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -27,7 +24,26 @@ const ColoredBar = styled.div`
     width: 40%;
     background-color: #ffe58f;
 `;
-
+const StyledBlogTitle = styled(Typography.Text)<{
+    color?: string;
+    size?: string;
+}>`
+     {
+        font-size: ${(props) => {
+                if (props.size === 'big') return `2.4rem !important;`;
+                if (props.size === 'small') return `1.8rem !important;`;
+                return `2.2rem !important;`;
+            }}
+            ${(props) =>
+                props.color ? `color: ${props.color} !important;` : undefined};
+        ${(props) =>
+            props.size === 'big' ? `font-weight: 700 !important;` : ''}
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+`;
 const CardContainer = styled.div`
     padding: 8px;
     display: flex;
@@ -76,19 +92,19 @@ const BlogCard = (props: {
     desc: string;
 }): React.ReactElement => {
     const { title, imgurl, date, desc } = props;
-    const [titleColor, setTitleColor] = useState('white');
+    const [hovered, setHovered] = useState(false);
     return (
         <CardContainer
-            onMouseEnter={() => setTitleColor('#ffe58f')}
-            onMouseLeave={() => setTitleColor('white')}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
         >
             <BlogImg imgurl={imgurl} />
             <Space />
-            <StyledText color={titleColor} size="big">
+            <StyledBlogTitle color={hovered ? '#ffe58f' : 'white'} size="big">
                 {title}
-            </StyledText>
+            </StyledBlogTitle>
             <Space />
-            <StyledText color="lightGray">
+            <StyledText color={hovered ? 'white' : 'lightGray'}>
                 {new Date(date).toLocaleString('en-US', {
                     year: 'numeric',
                     month: 'long',
@@ -98,7 +114,9 @@ const BlogCard = (props: {
             <Space />
             <ColoredBar />
             <Space />
-            <StyledText color="white">{desc}</StyledText>
+            <StyledText color={hovered ? 'white' : 'lightGray'}>
+                {desc}
+            </StyledText>
         </CardContainer>
     );
 };

@@ -3,7 +3,6 @@
 import Context from './contextInterface';
 
 export const IntroEnglish: Context = {
-    title: 'About Me',
     content: [
         [
             {
@@ -74,7 +73,6 @@ export const IntroEnglish: Context = {
 };
 
 export const IntroKorean: Context = {
-    title: 'About Me',
     content: [
         [
             {
