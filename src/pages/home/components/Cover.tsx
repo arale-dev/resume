@@ -94,11 +94,12 @@ const titleAnimation = keyframes`
     }
 `;
 
-const TitleLine = styled.text<{ nth: number }>`
+const TitleLine = styled.p<{ nth: number }>`
     display: block;
     color: white;
     font-weight: bold;
     font-size: 6rem;
+    margin-bottom: 0;
     ${(props) =>
         css`
             animation: ${titleAnimation} ${props.nth * 1.5}s;

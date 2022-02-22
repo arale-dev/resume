@@ -37,8 +37,8 @@ const tooltipTypoConverter = (
         </Tooltip>
     );
 };
-const iconConverter = (content: Content): ReactElement | undefined => {
-    const Icon = (iconContent: Content): ReactElement | undefined => {
+const iconConverter = (content: Content): ReactElement => {
+    const convertIcon = (iconContent: Content): ReactElement | undefined => {
         switch (iconContent) {
             case 'robot':
                 return <RobotOutlined />;
@@ -50,16 +50,17 @@ const iconConverter = (content: Content): ReactElement | undefined => {
                 return undefined;
         }
     };
-    if (Icon(content)) return <StyledIcon>{Icon(content)}</StyledIcon>;
-    return undefined;
+    const Icon = convertIcon(content);
+    if (Icon) return <StyledIcon>{Icon}</StyledIcon>;
+    return <div />;
 };
 const tooltipIconConverter = (
     content: Content,
     tooltip?: string
 ): ReactElement => {
     return (
-        <Tooltip title={tooltip || 'Click me!'} defaultVisible>
-            {iconConverter(content)}
+        <Tooltip title={tooltip || 'Click me!'}>
+            <span>{iconConverter(content)}</span>
         </Tooltip>
     );
 };
@@ -67,7 +68,7 @@ const hrefConverter = (content: Content, link?: Link): ReactElement => {
     return <StyledA href={link}>{content}</StyledA>;
 };
 
-const match = (content: ParagraphContent): ReactElement | undefined => {
+const Match = ({ content }: { content: ParagraphContent }): ReactElement => {
     switch (content.type) {
         case 'typo':
             return typoConverter(content.content);
@@ -82,12 +83,25 @@ const match = (content: ParagraphContent): ReactElement | undefined => {
         case 'href':
             return hrefConverter(content.content, content.link);
         default:
-            return undefined;
+            return <div />;
     }
 };
 
-const listConverter = (contents: BaseContent[]): ReactElement => {
-    return <li>{contents.map(match)}</li>;
+const ListConverter = ({
+    contents,
+    itemKey,
+}: {
+    contents: BaseContent[];
+    itemKey: string;
+}): ReactElement => {
+    return (
+        <li>
+            {contents.map((content, i) => {
+                const listKey = `${itemKey}list${i}`;
+                return <Match content={content} key={listKey} />;
+            })}
+        </li>
+    );
 };
 
 const ContextConverter = (props: { context: Context }): ReactElement => {
@@ -99,13 +113,24 @@ const ContextConverter = (props: { context: Context }): ReactElement => {
                     {context.title}
                 </StyledTitleWithoutAnimation>
             )}
-            {context.content.map((paragraph: Paragraph) => {
+            {context.content.map((paragraph: Paragraph, paragraphIdx) => {
+                const paragraphKey = context.title
+                    ? context.title + paragraphIdx.toString()
+                    : paragraphIdx.toString();
                 return (
-                    <StyledParagraph>
-                        {paragraph.map((content) => {
+                    <StyledParagraph key={paragraphKey}>
+                        {paragraph.map((content, contentIdx) => {
+                            // eslint-disable-next-line max-len
+                            const itemKey = `${paragraphKey}item${contentIdx.toString()}`;
                             if (content.type === 'list')
-                                return listConverter(content.contents);
-                            return match(content);
+                                return (
+                                    <ListConverter
+                                        contents={content.contents}
+                                        key={itemKey}
+                                        itemKey={itemKey}
+                                    />
+                                );
+                            return <Match content={content} key={itemKey} />;
                         })}
                     </StyledParagraph>
                 );

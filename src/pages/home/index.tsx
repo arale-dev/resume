@@ -45,8 +45,9 @@ const App = (): ReactElement => {
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[0] = el;
                 }}
-            />
-            <Cover />
+            >
+                <Cover />
+            </div>
             <Header
                 goToHome={goToHome}
                 goToIntro={goToIntro}
@@ -59,21 +60,22 @@ const App = (): ReactElement => {
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[1] = el;
                 }}
-            />
-            <PaddedContainer>
-                <StyledTitle>About Me</StyledTitle>
-                <ContextConverter context={contextStore.intro} />
-                <Divider />
-                <ContextConverter context={contextStore.education} />
-                <Divider />
-                <ContextConverter context={contextStore.awards} />
-            </PaddedContainer>
+            >
+                <PaddedContainer>
+                    <StyledTitle>About Me</StyledTitle>
+                    <ContextConverter context={contextStore.intro} />
+                    <Divider />
+                    <ContextConverter context={contextStore.education} />
+                    <Divider />
+                    <ContextConverter context={contextStore.awards} />
+                </PaddedContainer>
+            </div>
             <div
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[2] = el;
                 }}
                 style={{
-                    backgroundColor: '#393E46',
+                    backgroundColor: '#222831',
                     alignSelf: 'stretch',
                 }}
             >

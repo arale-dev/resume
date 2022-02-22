@@ -43,7 +43,10 @@ body {
 .ant-menu-item,
 .ant-menu-item-icon,
 .ant-menu-submenu-title {
-    font-size: 2.4rem !important;
+    font-size: 2rem !important;
+}
+.ant-menu-horizontal {
+    line-height: 3.4rem !important;
 }
 
 code {
