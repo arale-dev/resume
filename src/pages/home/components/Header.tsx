@@ -5,9 +5,9 @@ import {
     CommentOutlined,
     IdcardOutlined,
     SettingOutlined,
-    // AppstoreAddOutlined,
     HomeOutlined,
     BookOutlined,
+    AppstoreAddOutlined,
 } from '@ant-design/icons';
 import contextStore from '@context/contextStore';
 import { observer } from 'mobx-react-lite';
@@ -42,7 +42,7 @@ interface HeaderProps {
     goToHome: () => void;
     goToIntro: () => void;
     goToBlog: () => void;
-    // goToProj: () => void;
+    goToProj: () => void;
     goToContact: () => void;
 }
 
@@ -50,18 +50,12 @@ const Header = ({
     goToHome,
     goToIntro,
     goToBlog,
-    // goToProj,
+    goToProj,
     goToContact,
 }: HeaderProps): ReactElement => {
-    // TODO: 아이콘, 메뉴 이름 및 키, 클릭함수 데이터 이동
     return (
         <Container>
-            <StyledMenu
-                // onClick={handleClick}
-                // selectedKeys={[current]}
-                mode="horizontal"
-                selectable={false}
-            >
+            <StyledMenu mode="horizontal" selectable={false}>
                 <Menu.Item key="0" icon={<HomeOutlined />} onClick={goToHome}>
                     Home
                 </Menu.Item>
@@ -72,23 +66,22 @@ const Header = ({
                 >
                     About Me
                 </Menu.Item>
-                <Menu.Item key="2" icon={<BookOutlined />} onClick={goToBlog}>
-                    Blog
-                </Menu.Item>
-                {/* <Menu.Item
-                    key="3"
+                <Menu.Item
+                    key="2"
                     icon={<AppstoreAddOutlined />}
-                    // onClick={goToProj}
+                    onClick={goToProj}
                 >
                     My Projects
-                </Menu.Item> */}
+                </Menu.Item>
+                <Menu.Item key="3" icon={<BookOutlined />} onClick={goToBlog}>
+                    Blog
+                </Menu.Item>
                 <Menu.Item
                     key="4"
                     icon={<CommentOutlined />}
                     onClick={goToContact}
                 >
                     Contact Me
-                    {/* <a href={links.contact}>Contact Me</a> */}
                 </Menu.Item>
 
                 <SubMenu

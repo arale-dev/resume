@@ -18,7 +18,7 @@ const StyledButton = styled(Button)`
         height: auto !important;
         font-size: 2.4rem !important;
         text-align: center;
-        background-color: #222831;
+        background-color: #393e46;
         color: #eeeeee;
         padding: 1rem 4rem;
         border-width: 2px;
@@ -40,19 +40,21 @@ const Contact = (): ReactElement => {
                 placeholder="Enter your name or nickname"
                 allowClear
                 onChange={(e) => contextStore.setName(e.target.value)}
+                value={contextStore.name}
             />
             <Input
                 placeholder="Enter your email"
                 allowClear
                 onChange={(e) => contextStore.setEmail(e.target.value)}
+                value={contextStore.email}
             />
             <TextArea
                 rows={6}
                 placeholder="Enter your message"
                 allowClear
                 onChange={(e) => contextStore.setMessage(e.target.value)}
+                value={contextStore.message}
             />
-
             <StyledButton
                 type="ghost"
                 icon={<UploadOutlined />}

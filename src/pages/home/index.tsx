@@ -32,10 +32,10 @@ const App = (): ReactElement => {
         scrollRef.current[0]?.scrollIntoView({ behavior: 'smooth' });
     const goToIntro = (): void =>
         scrollRef.current[1]?.scrollIntoView({ behavior: 'smooth' });
-    const goToBlog = (): void =>
+    const goToProj = (): void =>
         scrollRef.current[2]?.scrollIntoView({ behavior: 'smooth' });
-    // const goToProj = (): void =>
-    //     scrollRef.current[3]?.scrollIntoView({ behavior: 'smooth' });
+    const goToBlog = (): void =>
+        scrollRef.current[3]?.scrollIntoView({ behavior: 'smooth' });
     const goToContact = (): void =>
         scrollRef.current[4]?.scrollIntoView({ behavior: 'smooth' });
 
@@ -52,7 +52,7 @@ const App = (): ReactElement => {
                 goToHome={goToHome}
                 goToIntro={goToIntro}
                 goToBlog={goToBlog}
-                // goToProj={goToProj}
+                goToProj={goToProj}
                 goToContact={goToContact}
             />
 
@@ -75,22 +75,22 @@ const App = (): ReactElement => {
                     scrollRef.current[2] = el;
                 }}
                 style={{
+                    backgroundColor: '#393E46',
+                    alignSelf: 'stretch',
+                    height: 500,
+                }}
+            />
+            <div
+                ref={(el: HTMLDivElement) => {
+                    scrollRef.current[3] = el;
+                }}
+                style={{
                     backgroundColor: '#222831',
                     alignSelf: 'stretch',
                 }}
             >
                 <Blog />
             </div>
-            {/* <div
-                ref={(el: HTMLDivElement) => {
-                    scrollRef.current[3] = el;
-                }}
-                style={{
-                    backgroundColor: 'red',
-                    height: 2000,
-                    alignSelf: 'stretch',
-                }}
-            /> */}
             <div
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[4] = el;
@@ -102,7 +102,7 @@ const App = (): ReactElement => {
             >
                 <Contact />
             </div>
-            <Footer />
+            <Footer goToHome={goToHome} />
         </Container>
     );
 };

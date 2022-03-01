@@ -16,7 +16,8 @@ export const EducationEnglish: Context = {
                 contents: [
                     {
                         type: 'typo',
-                        content: 'Bachelor of Engineering, 03.2015~08.2020',
+                        content:
+                            'Bachelor of Engineering, March.2015~August.2020',
                     },
                 ],
             },
@@ -41,7 +42,7 @@ export const EducationEnglish: Context = {
                 contents: [
                     {
                         type: 'typo',
-                        content: '03.2015~02.2020',
+                        content: 'March.2015~February.2020',
                     },
                 ],
             },
@@ -86,7 +87,7 @@ export const EducationKorean: Context = {
                 contents: [
                     {
                         type: 'typo',
-                        content: '졸업, 2015.03~2020.02',
+                        content: '졸업, 2013.03~2015.02',
                     },
                 ],
             },
