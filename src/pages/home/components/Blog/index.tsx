@@ -44,7 +44,7 @@ const BlogCardContainer = styled.div`
 const BlogTitleWrapper = styled.div`
      {
         margin: auto;
-        max-width: 1020px;
+        max-width: 980px;
         padding: 96px 32px 0px;
     }
 `;

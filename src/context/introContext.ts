@@ -45,10 +45,8 @@ export const IntroEnglish: Context = {
             {
                 type: 'typo',
                 content:
-                    ' From data science and backend to bio/medicine and Language, I am building up my knowledge not limited to the frontend field.',
+                    ' From data science and backend to bio/medicine and Language, I am building up my knowledge not limited to the frontend field. ',
             },
-        ],
-        [
             {
                 type: 'typo',
                 content:
@@ -118,10 +116,8 @@ export const IntroKorean: Context = {
             {
                 type: 'typo',
                 content:
-                    ' Data science, 백엔드, 바이오/의학 등 분야를 가리지 않고 지식을 쌓아나가고 있습니다.',
+                    ' Data science, 백엔드, 바이오/의학 등 분야를 가리지 않고 지식을 쌓아나가고 있습니다. ',
             },
-        ],
-        [
             {
                 type: 'typo',
                 content:

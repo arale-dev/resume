@@ -10,6 +10,7 @@ import contextStore from '@context/contextStore';
 import { StyledTitle } from '@src/components/StyledTypo';
 import Contact from './components/Contact';
 import Blog from './components/Blog';
+// import Project from './components/Project';
 
 const Container = styled.div`
      {
@@ -32,8 +33,8 @@ const App = (): ReactElement => {
         scrollRef.current[0]?.scrollIntoView({ behavior: 'smooth' });
     const goToIntro = (): void =>
         scrollRef.current[1]?.scrollIntoView({ behavior: 'smooth' });
-    const goToProj = (): void =>
-        scrollRef.current[2]?.scrollIntoView({ behavior: 'smooth' });
+    // const goToProj = (): void =>
+    //     scrollRef.current[2]?.scrollIntoView({ behavior: 'smooth' });
     const goToBlog = (): void =>
         scrollRef.current[3]?.scrollIntoView({ behavior: 'smooth' });
     const goToContact = (): void =>
@@ -52,7 +53,7 @@ const App = (): ReactElement => {
                 goToHome={goToHome}
                 goToIntro={goToIntro}
                 goToBlog={goToBlog}
-                goToProj={goToProj}
+                // goToProj={goToProj}
                 goToContact={goToContact}
             />
 
@@ -70,16 +71,17 @@ const App = (): ReactElement => {
                     <ContextConverter context={contextStore.awards} />
                 </PaddedContainer>
             </div>
-            <div
+            {/* <div
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[2] = el;
                 }}
                 style={{
                     backgroundColor: '#393E46',
                     alignSelf: 'stretch',
-                    height: 500,
                 }}
-            />
+            >
+                <Project />
+            </div> */}
             <div
                 ref={(el: HTMLDivElement) => {
                     scrollRef.current[3] = el;

@@ -42,7 +42,7 @@ export const EducationEnglish: Context = {
                 contents: [
                     {
                         type: 'typo',
-                        content: 'March.2015~February.2020',
+                        content: 'March.2013~February.2015',
                     },
                 ],
             },

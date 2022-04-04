@@ -7,7 +7,8 @@ import {
     SettingOutlined,
     HomeOutlined,
     BookOutlined,
-    AppstoreAddOutlined,
+    FileTextOutlined,
+    // AppstoreAddOutlined,
 } from '@ant-design/icons';
 import contextStore from '@context/contextStore';
 import { observer } from 'mobx-react-lite';
@@ -42,7 +43,7 @@ interface HeaderProps {
     goToHome: () => void;
     goToIntro: () => void;
     goToBlog: () => void;
-    goToProj: () => void;
+    // goToProj: () => void;
     goToContact: () => void;
 }
 
@@ -50,7 +51,7 @@ const Header = ({
     goToHome,
     goToIntro,
     goToBlog,
-    goToProj,
+    // goToProj,
     goToContact,
 }: HeaderProps): ReactElement => {
     return (
@@ -66,13 +67,13 @@ const Header = ({
                 >
                     About Me
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                     key="2"
                     icon={<AppstoreAddOutlined />}
                     onClick={goToProj}
                 >
                     My Projects
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item key="3" icon={<BookOutlined />} onClick={goToBlog}>
                     Blog
                 </Menu.Item>
@@ -82,6 +83,13 @@ const Header = ({
                     onClick={goToContact}
                 >
                     Contact Me
+                </Menu.Item>
+
+                <Menu.Item key="5" icon={<FileTextOutlined />}>
+                    {/* eslint-disable-next-line max-len */}
+                    <a href="https://drive.google.com/file/d/1zm1pi6RCyiRwsw7ECW5erxV6OwzxPOU2/view?usp=sharing">
+                        Resume
+                    </a>
                 </Menu.Item>
 
                 <SubMenu
